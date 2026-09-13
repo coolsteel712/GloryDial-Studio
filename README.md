@@ -2,9 +2,9 @@
 
 <img width="1442" height="1347" alt="Screenshot 2026-09-13 122207" src="https://github.com/user-attachments/assets/849a61dc-bdb6-43f6-ae14-79c4df0e9112" />
 
-A modern, open-source watch-face editor for `.bin` watch faces used by K72 and other compatible smart watches.
+Open-source watch face editor for UTE/GloryFit-compatible .bin watch faces, with support for multiple devices and compression versions.
 
-GloryDial Studio is designed to provide a more capable and user-friendly alternative to older watch-face editing tools such as ClockFaceEdit, while maintaining compatibility with the watch-face formats used by real devices.
+GloryDial Studio is designed to provide a more capable and user-friendly alternative to older watch face editing tools such as ClockFaceEdit, while maintaining compatibility with the watch face formats used by real devices.
 
 > **Status:** Early development / actively evolving
 ---
@@ -15,13 +15,13 @@ GloryDial Studio is designed to provide a more capable and user-friendly alterna
 ## Features
 
 * Create and edit `.bin` watch faces
-* Import existing watch-face files
-* Edit watch-face elements and their properties
-* Support for digital and analog watch-face components
+* Import existing watch face files
+* Edit watch face elements and their properties
+* Support for digital and analog watch face components
 * Watch hands and digit-based time displays
-* Image-based watch-face elements
-* Live watch-face preview
-* Export `.bin` watch-face files
+* Image-based watch face elements
+* Live watch face preview
+* Export `.bin` watch face files
 * Compatible with ClockFaceEdit
 * Designed to support multiple watch/firmware formats rather than being locked to a single device
 * Modern desktop interface built with Python and PyQt6
@@ -34,10 +34,10 @@ GloryDial Studio was created to make working with proprietary smart-watch face f
 
 The project aims to:
 
-1. Provide a modern replacement for older watch-face editors.
-2. Make `.bin` watch-face creation accessible without manually editing binary data.
-3. Preserve compatibility with existing watch-face tools where possible.
-4. Support multiple watch-face formats and device variants.
+1. Provide a modern replacement for older watch face editors.
+2. Make `.bin` watch face creation accessible without manually editing binary data.
+3. Preserve compatibility with existing watch face tools where possible.
+4. Support multiple watch face formats and device variants.
 5. Provide accurate previews before transferring a face to a watch.
 6. Eventually provide a complete workflow from importing a watch face to editing, previewing, and exporting it.
 
@@ -51,11 +51,11 @@ This tool was originally made for my K72 Rugged Smartwatch. After further analys
 
 ## File Format
 
-GloryDial Studio works with watch-face `.bin` files.
+GloryDial Studio works with watch face `.bin` files.
 
-The project was developed through analysis of existing watch-face files and the open-source **ClockFaceEdit** implementation.
+The project was developed through analysis of existing watch face files and the open-source **ClockFaceEdit** implementation.
 
-A `.bin` watch face contains a header followed by the compressed watch-face payload.
+A `.bin` watch face contains a header followed by the compressed watch face payload.
 
 The known header structure includes:
 
@@ -64,19 +64,19 @@ The known header structure includes:
 | `0x00` |  4 bytes | Opaque file identifier              |
 | `0x04` |  4 bytes | Payload length (`file length - 24`) |
 | `0x08` |  4 bytes | CRC32 of the payload                |
-| `0x0C` |  2 bytes | Watch-face width                    |
+| `0x0C` |  2 bytes | Watch face width                    |
 | `0x0E` | 10 bytes | Remaining header/reserved data      |
 | `0x18` |        — | Compressed payload                  |
 
 The original file identifier is preserved when appropriate rather than assuming that every watch face uses the same value.
 
-GloryDial Studio does **not** assume that every `.bin` file uses the same compression or format revision. Different watch-face families may use different structures.
+GloryDial Studio does **not** assume that every `.bin` file uses the same compression or format revision. Different watch face families may use different structures.
 
 ---
 
 ## Compatibility
 
-One of the project's primary goals is compatibility with existing watch-face software.
+One of the project's primary goals is compatibility with existing watch face software.
 
 ### ClockFaceEdit (xplorr's watch face tool)
 
@@ -96,9 +96,9 @@ xplorr's XDA thread: https://xdaforums.com/t/watchface-tool-editor-for-gloryfitp
 
 ---
 
-## Watch-Face Elements
+## Watch Face Elements
 
-The format can contain different types of watch-face components, including elements such as:
+The format can contain different types of watch face components, including elements such as:
 
 * Hours
 * Minutes
@@ -122,7 +122,7 @@ Analog hand objects may contain information such as:
 * Hand length toward the center
 * Hand width
 
-The exact available elements depend on the watch-face format being edited.
+The exact available elements depend on the watch face format being edited.
 
 ---
 
@@ -174,19 +174,19 @@ python main.py
 
 ## Important Notes
 
-GloryDial Studio works with proprietary watch-face formats.
+GloryDial Studio works with proprietary watch face formats.
 
 The format documentation is based on:
 
 * Reverse engineering
-* Analysis of real watch-face files
+* Analysis of real watch face files
 * Existing open-source implementations
 * Compatibility testing
 * Empirical testing with physical hardware
 
 Because these formats are not necessarily publicly documented by the original manufacturers, some portions of the format may remain undocumented or may differ between devices and firmware versions.
 
-**Always keep backups of your original watch-face files.**
+**Always keep backups of your original watch face files.**
 
 ---
 
@@ -196,7 +196,7 @@ Contributions are welcome.
 
 Useful contributions include:
 
-* Reverse engineering additional watch-face formats
+* Reverse engineering additional watch face formats
 * Adding support for new devices
 * Improving binary parsing
 * Improving rendering accuracy
@@ -227,13 +227,13 @@ GloryDial Studio is an independent open-source project.
 
 It is **not affiliated with, endorsed by, or sponsored by** Shenzhen Ultra Easy Technology Co., Ltd.
 
-Use the software and custom watch faces at your own risk. Improperly constructed watch-face files may fail to load or may be rejected by the watch's companion application.
+Use the software and custom watch faces at your own risk. Improperly constructed watch face files may fail to load or may be rejected by the watch's companion application.
 
 ---
 
 ## Project
 
 **GloryDial Studio**
-Open-source watch-face creation and editing for `.bin` smart-watch faces.
+Open-source watch face creation and editing for `.bin` smart-watch faces.
 
 Built for experimentation, reverse engineering, compatibility, and customization.
