@@ -139,7 +139,7 @@ The application is designed as a native desktop application rather than a web-ba
 
 ## Development Status
 
-GloryDial Studio is currently under active development.
+GloryDial Studio is currently under active development. While most functionalities work, some features may not work properly.
 
 ## Building / Running
 
