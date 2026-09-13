@@ -1,0 +1,593 @@
+{
+  "HoursHand": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true,
+    "ArrowInfo": {
+      "ArrowFullLength": 0,
+      "ArrowLengthToCenter": 0,
+      "ArrowWidth": 0
+    }
+  },
+  "MinutesHand": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true,
+    "ArrowInfo": {
+      "ArrowFullLength": 0,
+      "ArrowLengthToCenter": 0,
+      "ArrowWidth": 0
+    }
+  },
+  "SecondsHand": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true,
+    "ArrowInfo": {
+      "ArrowFullLength": 0,
+      "ArrowLengthToCenter": 0,
+      "ArrowWidth": 0
+    }
+  },
+  "HoursDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "MinutesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "SecondsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "TimeDelimiter": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "BatteryImages": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "ConnectionImages": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "Preview": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "MonthsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "MonthsNames": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "DayDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "DateDelimiter": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "DaysOfWeek": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "AmPmText": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "Background": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "PulseImages": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "PulseDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "WeatherImages": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "TemperatureDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "CelsiusFahrenheitText": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "BpmText": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "StepsIcon": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "StepsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "StepsText": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "FullYearDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "YearDelimiter": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "CaloriesImages": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "CaloriesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "CaloriesText": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "StepsImages": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "BatteryChargeDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "Percent": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "PulseHundredsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "PulseTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "PulseOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "StepsTenThousandsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "StepsThousandsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "StepsHundredsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "StepsTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "StepsOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "CaloriesThousandsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "CaloriesHundredsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "CaloriesTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "CaloriesOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "KilometresDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "KmMiText": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "Dots": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "Animation": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "KilometresTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "KilometresOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "KilometresDelimiter": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "KilometresTenthsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "KilometresHundredthsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "HoursTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "HoursOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "MinutesTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "MinutesOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "SecondsTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "SecondsOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "MonthTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "MonthOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "DayTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "DayOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "YearThousandsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "YearHundredsDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "YearTensDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "YearOnesDigits": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+  "CaloriesImages2": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+    "KilometresImages": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  },
+   "unknown": {
+    "X": 0,
+    "Y": 0,
+    "AnimationSpeed": 0,
+    "ImageIndex": 0,
+    "ImagesCount": 0,
+    "BlackIsTransparent": true
+  }
+}
