@@ -1,6 +1,6 @@
 # GloryDial Studio
 
-<img width="1442" height="1347" alt="Screenshot 2026-09-13 122207" src="https://github.com/user-attachments/assets/849a61dc-bdb6-43f6-ae14-79c4df0e9112" />
+<img width="1442" height="1347" alt="Screenshot 2026-11-03 191156" src="https://github.com/user-attachments/assets/de827cee-1bb1-4a3f-9005-801c0d6568ef" />
 
 Open-source watch face editor for UTE/GloryFit-compatible .bin watch faces, with support for multiple devices and compression versions.
 
