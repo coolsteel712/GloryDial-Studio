@@ -337,7 +337,7 @@ class MainWindow(QMainWindow):
             "About GloryDial Studio",
             "GloryDial Studio\n\n"
             "Open-source watch face editor for UTE/GloryFit-compatible .bin watch faces, with support for multiple devices and compression versions. "
-            "Supported Compression Versions: 1, 2, 3.",
+            "Supported Compression Versions: 1, 2, 3, 4.",
         )
 
 

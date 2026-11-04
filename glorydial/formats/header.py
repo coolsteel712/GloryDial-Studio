@@ -13,7 +13,7 @@ this module's tests. Layout:
     byte 16      0x00             reserved (CreateBinFile literal)
     byte 17      0x01             reserved (CreateBinFile literal)
     byte 18      0xFF             reserved (CreateBinFile literal)
-    byte 19      u8               compression version: 1, 2, or 3
+    byte 19      u8               compression version: 1, 2, 3, or 4
     byte 20      u8               block count (only meaningful for v>=3,
                                    0xFF otherwise)
     bytes 21-23  0xFF 0xFF 0xFF   padding
@@ -22,6 +22,15 @@ This was cross-checked against Double_Circle.bin: bytes[12:16] decoded
 to width=410/height=502, byte[19]=3, byte[20]=14 (block count), and
 bytes[8:12] as a little-endian u32 matched zlib.crc32(data[24:])
 exactly.
+
+Compression version 4 was reverse-engineered from a second real
+device export ("Architecture.bin", a 410x502 K72 face with 6 blocks:
+HoursHand/MinutesHand/SecondsHand/Preview/DayDigits/Background).
+Everything at the header level is identical to version 3 - same
+24-byte layout, same CRC32 coverage, byte[20] is still a meaningful
+block count - only byte[19] differs (4 instead of 3). See
+formats/lz4x.py for the one per-frame difference V4 actually
+introduces.
 """
 
 from __future__ import annotations
@@ -56,10 +65,10 @@ def parse_header(data: bytes) -> BinHeader:
     width, height = struct.unpack_from("<HH", data, 12)
     version_raw = data[19]
     version = 1 if version_raw == 0xFF else version_raw
-    if version not in (1, 2, 3):
+    if version not in (1, 2, 3, 4):
         raise ValueError(
             f"Unrecognized compression version byte 0x{version_raw:02X} at "
-            f"offset 19. Expected 1, 2, 3 (or 0xFF as an alias for 1)."
+            f"offset 19. Expected 1, 2, 3, 4 (or 0xFF as an alias for 1)."
         )
     block_count = data[20]
     return BinHeader(

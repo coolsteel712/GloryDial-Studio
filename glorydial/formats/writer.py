@@ -44,8 +44,8 @@ MAX_FILE_SIZE = 1024 * 1024  # CreateBinFile.java: finalBytesArr.length/1024 <= 
 
 def validate_project(project: Project, version: int) -> ValidationReport:
     report = ValidationReport()
-    if version not in (1, 2, 3):
-        report.error(f"Unsupported compression version {version!r}; must be 1, 2 or 3.")
+    if version not in (1, 2, 3, 4):
+        report.error(f"Unsupported compression version {version!r}; must be 1, 2, 3 or 4.")
         return report
     if not (0 <= project.screen_width <= 0xFFFF) or not (0 <= project.screen_height <= 0xFFFF):
         report.error(f"Screen size {project.screen_width}x{project.screen_height} does not fit this format's 16-bit fields.")
@@ -61,8 +61,8 @@ def validate_project(project: Project, version: int) -> ValidationReport:
             "against real image data during development - see formats/rle.py for "
             "the full analysis. GloryDial Studio reproduces this exactly for "
             "compatibility rather than silently 'fixing' the format. Prefer V1 "
-            "(always lossless) or V3 (validated byte-exact against a real device "
-            "export) unless a specific device requires V2."
+            "(always lossless) or V3/V4 (validated byte-exact against real device "
+            "exports) unless a specific device requires V2."
         )
 
     for block in project.blocks.values():
@@ -77,9 +77,9 @@ def validate_project(project: Project, version: int) -> ValidationReport:
                     f"All frames in a block must share the same dimensions."
                 )
                 break
-        if version == 3 and w0 % 2 != 0:
+        if version in (3, 4) and w0 % 2 != 0:
             report.error(
-                f"'{block.name}' frame 0 is {w0} pixels wide. Compression version 3 "
+                f"'{block.name}' frame 0 is {w0} pixels wide. Compression version {version} "
                 f"requires an even image width."
             )
         if not (0 <= block.images_count <= 0xFF):
@@ -129,14 +129,17 @@ def _frame_has_meaningful_alpha(image) -> bool:
     return bool((arr[:, :, 3] < 255).any())
 
 
-def _pack_v3_frame(image, start_address: int) -> bytes:
+def _pack_lz4_frame(image, start_address: int, version: int) -> bytes:
+    """Shared V3/V4 packer - see formats/lz4x.py for the one byte-level
+    difference between the two (the ``version`` argument passed
+    through to encode_frame)."""
     if _frame_has_meaningful_alpha(image):
         raw = argb6666.pack(image)
         method = lz4x.METHOD_ARGB6666
     else:
         raw = rgb565.pack_little_endian(image)
         method = lz4x.METHOD_RGB565
-    return lz4x.encode_frame(start_address, image.width, image.height, method, raw)
+    return lz4x.encode_frame(start_address, image.width, image.height, method, raw, version=version)
 
 
 def compile_bin(project: Project, version: int) -> bytes:
@@ -167,8 +170,8 @@ def compile_bin(project: Project, version: int) -> bytes:
         else:
             start_address = cursor
             for frame in block.frames:
-                if version == 3:
-                    frame_bytes = _pack_v3_frame(frame.image, cursor)
+                if version in (3, 4):
+                    frame_bytes = _pack_lz4_frame(frame.image, cursor, version)
                 else:
                     frame_bytes = _pack_v1_or_v2_frame(frame.image, block, version)
                 resource_bytes += frame_bytes

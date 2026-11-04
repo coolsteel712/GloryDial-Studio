@@ -41,6 +41,10 @@ def _is_compressed_frame(header: header_mod.BinHeader, type_id: int) -> bool:
         } else {
             flagCompressedFrame = (versionCompress == 3);
         }
+
+    Only meaningful for the V1/V2 scanline path - version 4 always
+    takes the LZ4 branch below regardless of this flag (see
+    read_bin_bytes), the same way version 3 does.
     """
     if block_schema.is_hand(type_id):
         return header.version == 3
@@ -92,7 +96,7 @@ def _decode_v1_v2_frame(data: bytes, addr: int, width: int, height: int, compres
     return image, addr + size
 
 
-def _decode_v3_frame(data: bytes, addr: int, block_name: str):
+def _decode_v3_or_v4_frame(data: bytes, addr: int, block_name: str):
     raw, meta, consumed = lz4x.decode_frame(data, addr)
     if meta.method == lz4x.METHOD_ARGB6666:
         image = argb6666.unpack(raw, meta.width, meta.height)
@@ -153,8 +157,8 @@ def read_bin_bytes(data: bytes) -> Tuple[Project, ValidationReport]:
         frames: List[Frame] = []
         try:
             for _ in range(d.images_count):
-                if header.version == 3:
-                    image, addr = _decode_v3_frame(data, addr, block_name)
+                if header.version in (3, 4):
+                    image, addr = _decode_v3_or_v4_frame(data, addr, block_name)
                 else:
                     image, addr = _decode_v1_v2_frame(data, addr, d.width, d.height, compressed, report, block_name)
                 frames.append(Frame(image))

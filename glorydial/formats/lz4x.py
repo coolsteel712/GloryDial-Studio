@@ -1,8 +1,12 @@
-"""Compression-version-3 per-frame LZ4 container.
+"""Compression-version-3/4 per-frame LZ4 container.
 
 Ported from ``Frame.decompressionLZ4`` (read) and the V3 branch of
-``CreateBinFile.addressStartImage`` (write). Every frame - hands
-included, unlike V1/V2 - is stored as:
+``CreateBinFile.addressStartImage`` (write). Compression version 4
+reuses this exact container byte-for-byte - verified by decoding every
+frame of a real V4 export ("Architecture.bin": 6 blocks, hands
+included, widths 28/40/30/342/28/410, methods 2 and 3 both present)
+with the logic below unmodified, which consumed the file exactly to
+EOF. Every frame - hands included, unlike V1/V2 - is stored as:
 
     u32 LE   start_address   (absolute byte offset of this frame in the
                               file; informational/legacy, re-derived on
@@ -40,11 +44,19 @@ Java code itself does). Both fields are modeled and preserved
 separately here to stay faithful to the actual write statements.
 
 CreateBinFile writes bytes 16/17 as the literal values 2 and 1
-(``metaData[16]=2; metaData[17]=1;``) and bytes 18/19 as 0xCC 0xCC
-(``metaData[18]=-52; metaData[19]=-52;`` i.e. -52 as a signed byte ==
-0xCC unsigned). Nothing in the available source explains what these
-four bytes mean beyond "always these constants" - they are preserved
-verbatim rather than reinterpreted.
+(``metaData[16]=2; metaData[17]=1;``) and, for version 3, bytes 18/19
+as 0xCC 0xCC (``metaData[18]=-52; metaData[19]=-52;`` i.e. -52 as a
+signed byte == 0xCC unsigned). Nothing in the available source
+explains what these four bytes mean beyond "always these constants" -
+they are preserved verbatim rather than reinterpreted.
+
+Version 4 writes bytes 18/19 as 0x00 0x00 instead of 0xCC 0xCC - this
+is the one byte-level difference between the two versions, confirmed
+across all 19 frames of "Architecture.bin" (every frame's bytes 18-19
+were 0x00 0x00, never 0xCC). Bytes 16/17 ("2, 1") are unchanged.
+Neither decoder here ever reads bytes 16-19 for anything - they're
+skipped as part of METADATA_SIZE - so this has no effect on decoding;
+it only matters for writing byte-exact V4 output.
 
 The LZ4 payload itself is a raw (headerless) LZ4 block, decompressed
 with an upper-bound target size of ``width*height*3`` regardless of
@@ -108,9 +120,9 @@ def decode_frame(buf: bytes, offset: int) -> "tuple[bytes, Lz4FrameMeta, int]":
     return raw, meta, METADATA_SIZE + meta.compressed_size
 
 
-def encode_frame(start_address: int, width: int, height: int, method: int, raw_pixels: bytes) -> bytes:
+def encode_frame(start_address: int, width: int, height: int, method: int, raw_pixels: bytes, version: int = 3) -> bytes:
     if method not in (METHOD_RGB565, METHOD_ARGB6666):
-        raise ValueError(f"Unsupported V3 pixel method {method!r}; expected {METHOD_RGB565} (RGB565) or {METHOD_ARGB6666} (ARGB6666).")
+        raise ValueError(f"Unsupported V3/V4 pixel method {method!r}; expected {METHOD_RGB565} (RGB565) or {METHOD_ARGB6666} (ARGB6666).")
     compressed = bytes(_lz4_compress(raw_pixels, mode="fast", store_size=False))
     meta = bytearray(METADATA_SIZE)
     struct.pack_into("<IHH", meta, 0, start_address & 0xFFFFFFFF, width, height)
@@ -125,6 +137,9 @@ def encode_frame(start_address: int, width: int, height: int, method: int, raw_p
     struct.pack_into("<I", meta, 12, len(compressed))
     meta[16] = 2
     meta[17] = 1
-    meta[18] = 0xCC
-    meta[19] = 0xCC
+    # V3 writes 0xCC 0xCC here; V4 writes 0x00 0x00 - see module
+    # docstring. Decoding ignores these bytes either way.
+    tail = 0x00 if version == 4 else 0xCC
+    meta[18] = tail
+    meta[19] = tail
     return bytes(meta) + compressed

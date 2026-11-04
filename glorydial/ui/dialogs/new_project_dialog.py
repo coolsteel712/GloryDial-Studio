@@ -45,7 +45,7 @@ class NewProjectDialog(QDialog):
         form.addRow("Height", self.height_spin)
 
         self.version_combo = QComboBox()
-        self.version_combo.addItems(["1 - no compression", "2 - scanline RLE", "3 - LZ4"])
+        self.version_combo.addItems(["1 - no compression", "2 - scanline RLE", "3 - LZ4", "4 - LZ4"])
         self.version_combo.setCurrentIndex(2)
         form.addRow("Compression version", self.version_combo)
 

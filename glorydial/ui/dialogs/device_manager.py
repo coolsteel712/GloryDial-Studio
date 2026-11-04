@@ -51,7 +51,7 @@ class DeviceManagerDialog(QDialog):
         self.height_spin = QSpinBox()
         self.height_spin.setRange(1, 4096)
         self.versions_edit = QLineEdit()
-        self.versions_edit.setPlaceholderText("e.g. 1,2,3 or just 3")
+        self.versions_edit.setPlaceholderText("e.g. 1,2,3,4 or just 3")
         self.notes_edit = QLineEdit()
         form.addRow("Name", self.name_edit)
         form.addRow("Width", self.width_spin)
